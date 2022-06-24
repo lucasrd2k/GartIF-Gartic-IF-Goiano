@@ -1,12 +1,12 @@
-# Dependências
+# Gartif
+
+Desenhe online com seus amigos 
+
+## Dependências
 
  - **Node**
  - **Npm**
  - **Socket IO**
-
-# Gartif
-
-Desenhar online com seus amigos 
 
 ## Iniciando
 
