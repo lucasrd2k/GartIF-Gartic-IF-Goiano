@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const desenharLinha = (linha) => {
         if (linha) {
             context.beginPath()
-            context.moveTo(linha.pos.x - 360, linha.pos.y - 56)
-            context.lineTo(linha.posAnterior.x - 360, linha.posAnterior.y - 56)
+            context.moveTo(linha.pos.x - 200, linha.pos.y - 56)
+            context.lineTo(linha.posAnterior.x - 200, linha.posAnterior.y - 56)
             context.stroke()
         } else {
             context.clearRect(0, 0, canvas.width, canvas.height);
@@ -38,6 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.on('desenhar', linha => {
         desenharLinha(linha)
+    })
+
+    socket.on('mostrar', p => {
+        console.log("Palavra:" + p)
+        var element = document.getElementById('frase')
+        element.innerHTML = p
+
+
     })
 
     const ciclo = () => {
