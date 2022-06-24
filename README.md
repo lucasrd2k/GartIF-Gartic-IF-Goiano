@@ -19,12 +19,11 @@ node app.js
 
 ## Próximos passos
 
-- [ ] Chat
 - [ ] Chat de respostas
-- [ ] Cadastro dos desenhos pedidos
 - [x] Um player aleatório desenha por vez
 - [ ] Detectar Desconexão e remover da lista
 - [ ] Implementar Crl+Z
+- [ ] Várias salas
 
 ## Informações adicionais
 
