@@ -16,5 +16,6 @@ node app.js
 - [ ] Chat
 - [ ] Chat de respostas
 - [ ] Cadastro dos desenhos pedidos
-- [ ] Um player desenha por vez
+- [x] Um player aleatório desenha por vez
+- [ ] Detectar Desconexão e remover da lista
 - [ ] Implementar Crl+Z
