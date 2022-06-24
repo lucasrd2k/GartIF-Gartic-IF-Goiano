@@ -1,18 +1,20 @@
-# Board Draw
+# Gartif
 
-Draw with your friend.
+Desenhar online com seus amigos 
 
-## Getting Started
+## Iniciando
 
-Clone this repository and.
+Clone o repositório e.
 
 ```shell
-yarn install
-yarn start
+npm install
+node app.js
 ```
 
-## Next steps
+## Próximos passos
 
-- [ ] Improving style
-- [ ] For each new player, add aleatory color to pencil
-- [ ] Implement Crl+Z
+- [ ] Chat
+- [ ] Chat de respostas
+- [ ] Cadastro dos desenhos pedidos
+- [ ] Um player desenha por vez
+- [ ] Implementar Crl+Z
