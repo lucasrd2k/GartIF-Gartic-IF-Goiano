@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro Contrato</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            background: url("img/dark-blue-background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        h1 {
+            padding-left: 10vw;
+        }
+        
+        main canvas#tela {
+            width: 800px;
+            height: 550px;
+            border: 2px solid teal;
+            border-radius: 3px;
+            cursor: url('images/pencil2.svg'), auto;
+        }
+    </style>
+
+    <script src="socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="h-100 align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm"></div>
+                <!--o conteúdo do container é dividido em 12 colunas, onde aqui o formulário ocupa as 12-->
+                <div class="col-sm-12">
+                    <!--border -primary deixou as bordas do card azul-->
+                    <!--my-5 é um espaçamento de margem supeior e inferior do card-->
+                    <div class="card border-primary">
+                        <!-- cria-se uma div para o componente card do bootstrap -->
+
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 canvas" id="canvas">
+                                            <center>
+                                                <h4>Desenhar: ***********</h4>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col-10">
+                                            <main>
+                                                <canvas id="tela"></canvas>
+                                                <a class="btn btn-warning">Espaço para Limpar</a>
+                                            </main>
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

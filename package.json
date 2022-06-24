@@ -1,0 +1,17 @@
+{
+    "name": "gartif-ifgoiano",
+    "version": "1.0.0",
+    "main": "app.js",
+    "author": "IF Goiano Ceres - trabalho",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon app"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^2.4.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}
