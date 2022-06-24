@@ -12,9 +12,10 @@ const io = socketIo.listen(server);
 
 let historico = []
 let chat = []
-let wordlist = ["computador", "mouse", "televisao", "notebook"]
+let wordlist = []
 let users = []
 let user = []
+let pontuacao = []
 
 io.on('connection', socket => { //.on é uma função que fica verificando se ocorreu algo no servidor
 
@@ -22,27 +23,33 @@ io.on('connection', socket => { //.on é uma função que fica verificando se oc
 
     historico.forEach(linha => socket.emit('desenhar', linha)) //Desenha
     users.push(socket.id)
+    pontuacao.push(0)
+
 
 
     socket.on('clear', () => { //Função pra limpar (zera o vetor e depois reescreve com ele zerado)
+
             historico = new Array()
             io.emit('desenhar')
             random = Math.floor(Math.random() * users.length)
             user.push(users[random])
             console.log("Usuário desenhista: " + user[user.length - 1])
             usuario = user[user.length - 1]
-            io.emit('iniciar', usuario)
+            wordlist.push("computador", "mouse", "televisao", "notebook")
+            palavra = wordlist[Math.random() * wordlist.length]
+            palavra = "Nada, não é sua vez"
+            if (socket.id == usuario) {
+                palavra = "O que quiser"
+            }
+            io.emit('mostrar', palavra)
+
+
         }) //Função que limpa o desenho e define o novo desenhista ao final de cada rodada
     socket.on('desenhar', linha => { //Função pra desenhar (adiciona a linha no vetor e depois desenha as linhas)
         historico.push(linha)
         if (socket.id == user[user.length - 1]) {
             io.emit('desenhar', linha)
         }
-    })
-    socket.on('iniciar', usuario => { //Função que aleatoriza o desenho que  deve ser desenhado
-        palavra = wordlist[Math.random() * wordlist.length]
-        io.emit('mostrar', palavra)
-        console.log("Palavra:" + palavra + "--Usuario:" + usuario)
     })
 })
 

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             context.beginPath()
             context.moveTo(linha.pos.x - 200, linha.pos.y - 56)
             context.lineTo(linha.posAnterior.x - 200, linha.posAnterior.y - 56)
-            context.stroke()
+            context.stroke() //Desenha a linha
         } else {
             context.clearRect(0, 0, canvas.width, canvas.height);
         }
@@ -41,9 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     socket.on('mostrar', p => {
-        console.log("Palavra:" + p)
-        var element = document.getElementById('frase')
-        element.innerHTML = p
+        frase.innerHTML = (`Desenhe: ${p}`)
+
 
 
     })
@@ -67,5 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             socket.emit('clear')
         }
     })
-
+    document.body.addEventListener('keyup', e => {
+        if (e.keyCode === 13) {
+            var texto = document.querySelector("#texto").value;
+            console.log(texto)
+            document.querySelector("#texto").value = "";
+            document.getElementById("cont").innerHTML("<div class='row text-left'><div class='col'>" + texto + "</div></div>");
+        }
+    })
 })
